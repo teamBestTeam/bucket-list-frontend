@@ -25,11 +25,31 @@ const onShowItemFailure = function () {
   console.log('You failed...no item for you')
 }
 
+const onUpdateItemSuccess = function (data) {
+  console.log('Item updated', data)
+}
+
+const onUpdateItemFailure = function () {
+  console.log('You failed...to update item')
+}
+
+const onDeleteItemSuccess = function () {
+  console.log('Item deleted'  )
+}
+
+const onDeleteItemFailure = function () {
+  console.log('You failed...to delete item')
+}
+
 module.exports = {
   onCreateItemSuccess,
   onCreateItemFailure,
   onIndexItemsSuccess,
   onIndexItemsFailure,
   onShowItemSuccess,
-  onShowItemFailure
+  onShowItemFailure,
+  onUpdateItemSuccess,
+  onUpdateItemFailure,
+  onDeleteItemSuccess,
+  onDeleteItemFailure
 }

@@ -34,8 +34,31 @@ const showItem = function (data) {
   })
 }
 
+const updateItem = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/items/' + data.item.id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const deleteItem = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/items/' + data.item.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createItem,
   indexItems,
-  showItem
+  showItem,
+  updateItem,
+  deleteItem
 }

@@ -24,10 +24,28 @@ const onShowItemSubmit = function (event) {
     .catch(ui.onShowItemFailure)
 }
 
+const onUpdateItemSubmit = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updateItem(data)
+    .then(ui.onUpdateItemSuccess)
+    .catch(ui.onUpdateItemFailure)
+}
+
+const onDeleteItemSubmit = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.deleteItem(data)
+    .then(ui.onDeleteItemSuccess)
+    .catch(ui.onDeleteItemFailure)
+}
+
 const userEventListeners = function () {
   $('#content').on('submit', '#createItemForm', onCreateItemSubmit)
   $('#content').on('click', '#indexItems', onIndexItemsClick)
   $('#content').on('submit', '#showItemForm', onShowItemSubmit)
+  $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
+  $('#content').on('submit', '#deleteItemForm', onDeleteItemSubmit)
 }
 
 module.exports = {
