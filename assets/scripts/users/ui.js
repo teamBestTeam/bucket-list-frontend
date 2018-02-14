@@ -1,5 +1,7 @@
+const fillers = require('../fillers/events')
 
 const onSignInSuccess = function () {
+  fillers.onProfileLoad()
   console.log('YOU WERE SUCCESSFUL')
 }
 
