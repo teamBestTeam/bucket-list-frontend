@@ -11,8 +11,18 @@ const onSignInSubmit = function (event) {
     .catch(ui.onSignInFailure)
 }
 
+const onSignUpSubmit = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.signUpUser(data)
+    .then(ui.onSignUpSuccess)
+    .catch(ui.onSignUpFailure)
+}
+
 const userEventListeners = function () {
   $('#content').on('submit', '#signInForm', onSignInSubmit)
+  $('#content').on('submit', '#signUpForm', onSignUpSubmit)
 }
 
 module.exports = {
