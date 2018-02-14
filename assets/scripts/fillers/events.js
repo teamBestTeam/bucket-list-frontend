@@ -3,6 +3,7 @@ const signUpTemplate = require('../templates/signUp.handlebars')
 const signInTemplate = require('../templates/signIn.handlebars')
 const profileTemplate = require('../templates/profile.handlebars')
 const changePassTemplate = require('../templates/changePass.handlebars')
+const createItemTemplate = require('../templates/createItem.handlebars')
 
 const onPageLoad = function () {
   const mainHTML = mainTemplate()
@@ -28,10 +29,16 @@ const onProfileLoad = function () {
   $('#content').html(profileHTML)
 }
 
+const onCreateItemLoad = function () {
+  const createItemHTML = createItemTemplate()
+  $('#content').html(createItemHTML)
+}
+
 const eventListeners = function () {
   $('#content').on('click', '#signIn', onSignInLoad)
   $('#content').on('click', '#signUp', onSignUpLoad)
   $('#content').on('click', '#changePass', onChangePassLoad)
+  $('#content').on('click', '#createItem', onCreateItemLoad)
 }
 
 module.exports = {
