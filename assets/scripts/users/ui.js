@@ -1,7 +1,10 @@
 const fillers = require('../fillers/events')
+const store = require('../store')
 
-const onSignInSuccess = function () {
+const onSignInSuccess = function (data) {
   fillers.onProfileLoad()
+  store.user = data.user
+  console.log(store.user)
   console.log('YOU WERE SUCCESSFUL')
 }
 
