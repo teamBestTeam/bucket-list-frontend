@@ -20,9 +20,19 @@ const onSignUpFailure = function () {
   console.log('you failed')
 }
 
+const onChangePassSuccess = function () {
+  console.log('YOU WERE SUCCESSFUL')
+}
+
+const onChangePassFailure = function () {
+  console.log('you failed')
+}
+
 module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignUpFailure,
-  onSignUpSuccess
+  onSignUpSuccess,
+  onChangePassSuccess,
+  onChangePassFailure
 }

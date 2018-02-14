@@ -21,6 +21,7 @@ const onSignUpSubmit = function (event) {
 }
 
 const onChangePassSubmit = function (event) {
+  console.log('got here')
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
