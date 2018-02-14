@@ -21,7 +21,6 @@ const onSignUpSubmit = function (event) {
 }
 
 const onChangePassSubmit = function (event) {
-  console.log('got here')
   event.preventDefault()
   const data = getFormFields(event.target)
   console.log(data)
@@ -30,10 +29,17 @@ const onChangePassSubmit = function (event) {
     .catch(ui.onChangePassFailure)
 }
 
+const onSignOutClick = function () {
+  api.signOutUser()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 const userEventListeners = function () {
   $('#content').on('submit', '#signInForm', onSignInSubmit)
   $('#content').on('submit', '#signUpForm', onSignUpSubmit)
   $('#content').on('submit', '#changePassForm', onChangePassSubmit)
+  $('#content').on('click', '#signOut', onSignOutClick)
 }
 
 module.exports = {

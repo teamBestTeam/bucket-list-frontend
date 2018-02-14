@@ -28,11 +28,22 @@ const onChangePassFailure = function () {
   console.log('you failed')
 }
 
+const onSignOutSuccess = function () {
+  console.log('YOU WERE SUCCESSFUL')
+}
+
+const onSignOutFailure = function (error) {
+  console.log(error)
+  console.log('you failed')
+}
+
 module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignUpFailure,
   onSignUpSuccess,
   onChangePassSuccess,
-  onChangePassFailure
+  onChangePassFailure,
+  onSignOutFailure,
+  onSignOutSuccess
 }
