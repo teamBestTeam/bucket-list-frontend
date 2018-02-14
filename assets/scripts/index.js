@@ -2,10 +2,15 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const fillers = require('./fillers/events')
 
 $(() => {
   setAPIOrigin(location, config)
+  fillers.onPageLoad()
+  fillers.eventListeners()
 })
+
+
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')
