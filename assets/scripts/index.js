@@ -7,6 +7,7 @@ const fillers = require('./fillers/events')
 $(() => {
   setAPIOrigin(location, config)
   fillers.onPageLoad()
+  fillers.eventListeners()
 })
 
 
