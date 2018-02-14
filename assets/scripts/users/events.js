@@ -20,9 +20,26 @@ const onSignUpSubmit = function (event) {
     .catch(ui.onSignUpFailure)
 }
 
+const onChangePassSubmit = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.changePassUser(data)
+    .then(ui.onChangePassSuccess)
+    .catch(ui.onChangePassFailure)
+}
+
+const onSignOutClick = function () {
+  api.signOutUser()
+    .then(ui.onSignOutSuccess)
+    .catch(ui.onSignOutFailure)
+}
+
 const userEventListeners = function () {
   $('#content').on('submit', '#signInForm', onSignInSubmit)
   $('#content').on('submit', '#signUpForm', onSignUpSubmit)
+  $('#content').on('submit', '#changePassForm', onChangePassSubmit)
+  $('#content').on('click', '#signOut', onSignOutClick)
 }
 
 module.exports = {
