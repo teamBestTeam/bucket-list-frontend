@@ -14,6 +14,28 @@ const createItem = function (data) {
   })
 }
 
+const indexItems = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/items',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const showItem = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/items/' + data.item.id,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createItem
+  createItem,
+  indexItems,
+  showItem
 }
