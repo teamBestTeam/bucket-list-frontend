@@ -1,8 +1,9 @@
-// const fillers = require('../fillers/events')
 // const store = require('../store')
+const indexItemsTemplate = require('../templates/indexItems.handlebars')
+const createItemTemplate = require('../templates/createItem.handlebars')
 
 const onCreateItemSuccess = function (data) {
-  console.log('Created Item!', data)
+  $('#createItemContainer').html('')
 }
 
 const onCreateItemFailure = function () {
@@ -10,11 +11,21 @@ const onCreateItemFailure = function () {
 }
 
 const onIndexItemsSuccess = function (data) {
-  console.log('See your items!', data)
+  if (data.items.length < 1) {
+    $('#bucketListBucket').html('')
+    const createItemHTML = createItemTemplate()
+    $('#createItemContainer').html(createItemHTML)
+  } else {
+    const indexItemsHTML = indexItemsTemplate({'items': data.items})
+    $('#bucketListBucket').html(indexItemsHTML)
+  }
 }
 
 const onIndexItemsFailure = function () {
-  console.log('You failed...no items')
+  const buttonHTML = (`
+    <p>'Unable to display Bucket-Items</p>
+    <button id="indexItemsFailButton">TRY AGAIN</button>`)
+  $('#errorMessageProfile').html(buttonHTML)
 }
 
 const onShowItemSuccess = function (data) {
@@ -34,11 +45,11 @@ const onUpdateItemFailure = function () {
 }
 
 const onDeleteItemSuccess = function () {
-  console.log('Item deleted'  )
+  // console.log('Item deleted')
 }
 
 const onDeleteItemFailure = function () {
-  console.log('You failed...to delete item')
+  $('#errorMessageProfile').text('Unable to delete Bucket Item')
 }
 
 module.exports = {

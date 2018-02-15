@@ -31,7 +31,7 @@ const onProfileLoad = function () {
 
 const onCreateItemLoad = function () {
   const createItemHTML = createItemTemplate()
-  $('#content').html(createItemHTML)
+  $('#createItemContainer').html(createItemHTML)
 }
 
 const eventListeners = function () {
@@ -46,5 +46,4 @@ module.exports = {
   onProfileLoad,
   eventListeners,
   onSignInLoad
-
 }

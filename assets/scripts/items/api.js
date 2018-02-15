@@ -24,16 +24,6 @@ const indexItems = function () {
   })
 }
 
-const showItem = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/items/' + data.item.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const updateItem = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/items/' + data.item.id,
@@ -45,9 +35,9 @@ const updateItem = function (data) {
   })
 }
 
-const deleteItem = function (data) {
+const deleteItem = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/items/' + data.item.id,
+    url: config.apiOrigin + '/items/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -58,7 +48,6 @@ const deleteItem = function (data) {
 module.exports = {
   createItem,
   indexItems,
-  showItem,
   updateItem,
   deleteItem
 }
