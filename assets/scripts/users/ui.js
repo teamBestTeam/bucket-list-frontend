@@ -23,11 +23,11 @@ const passwordMissMatch = function () {
 }
 
 const onChangePassSuccess = function () {
-  console.log('YOU WERE SUCCESSFUL')
+  $('#changePassContainer').html('Success!')
 }
 
 const onChangePassFailure = function () {
-  console.log('you failed')
+  $('#errorMessageProfile').text('Unable to change password.')
 }
 
 const onSignOutSuccess = function () {

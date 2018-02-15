@@ -21,7 +21,7 @@ const onSignInLoad = function () {
 
 const onChangePassLoad = function () {
   const changePassHTML = changePassTemplate()
-  $('#content').html(changePassHTML)
+  $('#changePassContainer').html(changePassHTML)
 }
 
 const onProfileLoad = function () {
