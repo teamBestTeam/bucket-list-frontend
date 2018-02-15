@@ -34,7 +34,7 @@ const onUpdateItemFailure = function () {
 }
 
 const onDeleteItemSuccess = function () {
-  console.log('Item deleted'  )
+  console.log('Item deleted')
 }
 
 const onDeleteItemFailure = function () {
