@@ -31,7 +31,6 @@ const changePassUser = function (data) {
 }
 
 const signOutUser = function () {
-  console.log(store.user)
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',

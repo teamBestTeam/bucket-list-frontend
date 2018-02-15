@@ -11,12 +11,12 @@ const onPageLoad = function () {
 }
 const onSignUpLoad = function () {
   const signUpHTML = signUpTemplate()
-  $('#content').html(signUpHTML)
+  $('#form').html(signUpHTML)
 }
 
 const onSignInLoad = function () {
   const signInHTML = signInTemplate()
-  $('#content').html(signInHTML)
+  $('#form').html(signInHTML)
 }
 
 const onChangePassLoad = function () {
@@ -44,6 +44,7 @@ const eventListeners = function () {
 module.exports = {
   onPageLoad,
   onProfileLoad,
-  eventListeners
+  eventListeners,
+  onSignInLoad
 
 }

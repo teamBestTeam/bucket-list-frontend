@@ -1,20 +1,23 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const itemEvents = require('../items/events')
 
 const onSignInSubmit = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.signInUser(data)
     .then(ui.onSignInSuccess)
+    .then(itemEvents.onIndexItems)
     .catch(ui.onSignInFailure)
 }
 
 const onSignUpSubmit = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
+  if (data.credentials.password !== data.credentials.password_confirmation) {
+    return ui.passwordMissMatch()
+  }
   api.signUpUser(data)
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)
@@ -23,7 +26,6 @@ const onSignUpSubmit = function (event) {
 const onChangePassSubmit = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
   api.changePassUser(data)
     .then(ui.onChangePassSuccess)
     .catch(ui.onChangePassFailure)
