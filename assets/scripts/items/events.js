@@ -10,7 +10,7 @@ const onCreateItemSubmit = function (event) {
     .catch(ui.onCreateItemFailure)
 }
 
-const onIndexItemsClick = function () {
+const onIndexItems = function () {
   api.indexItems()
     .then(ui.onIndexItemsSuccess)
     .catch(ui.onIndexItemsFailure)
@@ -42,12 +42,13 @@ const onDeleteItemSubmit = function (event) {
 
 const userEventListeners = function () {
   $('#content').on('submit', '#createItemForm', onCreateItemSubmit)
-  $('#content').on('click', '#indexItems', onIndexItemsClick)
+  $('#content').on('click', '#indexItems', onIndexItems)
   $('#content').on('submit', '#showItemForm', onShowItemSubmit)
   $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
   $('#content').on('submit', '#deleteItemForm', onDeleteItemSubmit)
 }
 
 module.exports = {
-  userEventListeners
+  userEventListeners,
+  onIndexItems
 }

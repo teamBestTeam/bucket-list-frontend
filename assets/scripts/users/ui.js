@@ -4,12 +4,10 @@ const store = require('../store')
 const onSignInSuccess = function (data) {
   fillers.onProfileLoad()
   store.user = data.user
-  console.log(store.user)
-  console.log('YOU WERE SUCCESSFUL')
 }
 
 const onSignInFailure = function () {
-  console.log('you failed')
+  $('#errorMessageSignIn').text('Sign in failed. It\'s not you, it\'s us.')
 }
 
 const onSignUpSuccess = function () {

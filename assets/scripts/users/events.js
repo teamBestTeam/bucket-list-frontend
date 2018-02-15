@@ -1,12 +1,14 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const itemEvents = require('../items/events')
 
 const onSignInSubmit = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signInUser(data)
     .then(ui.onSignInSuccess)
+    .then(itemEvents.onIndexItems)
     .catch(ui.onSignInFailure)
 }
 
