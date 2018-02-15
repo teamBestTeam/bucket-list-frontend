@@ -32,14 +32,6 @@ const onUpdateItemSubmit = function (event) {
     .catch(ui.onUpdateItemFailure)
 }
 
-const onDeleteItemSubmit = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.deleteItem(data)
-    .then(ui.onDeleteItemSuccess)
-    .catch(ui.onDeleteItemFailure)
-}
-
 const onDeleteItemClick = function () {
   const dataId = $(this).parents('.card').data('id')
   api.deleteItem(dataId)
@@ -53,7 +45,6 @@ const userEventListeners = function () {
   $('#content').on('click', '#indexItems', onIndexItems)
   $('#content').on('submit', '#showItemForm', onShowItemSubmit)
   $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
-  // $('#content').on('submit', '#deleteItemForm', onDeleteItemSubmit)
   $('#content').on('click', '#deletItemButton', onDeleteItemClick)
 }
 
