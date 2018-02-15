@@ -45,9 +45,9 @@ const updateItem = function (data) {
   })
 }
 
-const deleteItem = function (data) {
+const deleteItem = function (id) {
   return $.ajax({
-    url: config.apiOrigin + '/items/' + data.item.id,
+    url: config.apiOrigin + '/items/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

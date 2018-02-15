@@ -46,5 +46,4 @@ module.exports = {
   onProfileLoad,
   eventListeners,
   onSignInLoad
-
 }

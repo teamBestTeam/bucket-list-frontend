@@ -40,12 +40,21 @@ const onDeleteItemSubmit = function (event) {
     .catch(ui.onDeleteItemFailure)
 }
 
+const onDeleteItemClick = function () {
+  const dataId = $(this).parents('.card').data('id')
+  api.deleteItem(dataId)
+    .then(ui.onDeleteItemSuccess)
+    .then(onIndexItems)
+    .catch(ui.onDeleteItemFailure)
+}
+
 const userEventListeners = function () {
   $('#content').on('submit', '#createItemForm', onCreateItemSubmit)
   $('#content').on('click', '#indexItems', onIndexItems)
   $('#content').on('submit', '#showItemForm', onShowItemSubmit)
   $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
-  $('#content').on('submit', '#deleteItemForm', onDeleteItemSubmit)
+  // $('#content').on('submit', '#deleteItemForm', onDeleteItemSubmit)
+  $('#content').on('click', '#deletItemButton', onDeleteItemClick)
 }
 
 module.exports = {

@@ -1,5 +1,5 @@
-// const fillers = require('../fillers/events')
 // const store = require('../store')
+const indexItemsTemplate = require('../templates/indexItems.handlebars')
 
 const onCreateItemSuccess = function (data) {
   console.log('Created Item!', data)
@@ -10,7 +10,9 @@ const onCreateItemFailure = function () {
 }
 
 const onIndexItemsSuccess = function (data) {
-  console.log('See your items!', data)
+  console.log(data.items, 'items')
+  const indexItemsHTML = indexItemsTemplate({'items': data.items})
+  $('#bucketListBucket').html(indexItemsHTML)
 }
 
 const onIndexItemsFailure = function () {
