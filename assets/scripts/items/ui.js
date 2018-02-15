@@ -22,7 +22,10 @@ const onIndexItemsSuccess = function (data) {
 }
 
 const onIndexItemsFailure = function () {
-  $('#errorMessageProfile').text('Unable to display Bucket-Items')
+  const buttonHTML = (`
+    <p>'Unable to display Bucket-Items</p>
+    <button id="indexItemsFailButton">TRY AGAIN</button>`)
+  $('#errorMessageProfile').html(buttonHTML)
 }
 
 const onShowItemSuccess = function (data) {

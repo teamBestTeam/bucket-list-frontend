@@ -58,6 +58,7 @@ const userEventListeners = function () {
   $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
   $('#content').on('click', '#deletItemButton', onDeleteItemClick)
   $('#content').on('click', '#updateItemButton', onUpdateItemClick)
+  $('#content').on('click', '#indexItemsFailButton', onIndexItems)
 }
 
 module.exports = {
