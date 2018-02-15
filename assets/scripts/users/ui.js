@@ -13,11 +13,15 @@ const onSignInFailure = function () {
 }
 
 const onSignUpSuccess = function () {
-  console.log('YOU WERE SUCCESSFUL')
+  fillers.onSignInLoad()
 }
 
 const onSignUpFailure = function () {
-  console.log('you failed')
+  $('#errorMessageSignUp').text('Sign up failed. It\'s not you, it\'s us.')
+}
+
+const passwordMissMatch = function () {
+  $('#errorMessageSignUp').text('Your passwords don\'t match! Try another password.')
 }
 
 const onChangePassSuccess = function () {
@@ -45,5 +49,6 @@ module.exports = {
   onChangePassSuccess,
   onChangePassFailure,
   onSignOutFailure,
-  onSignOutSuccess
+  onSignOutSuccess,
+  passwordMissMatch
 }

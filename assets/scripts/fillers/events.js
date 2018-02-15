@@ -44,6 +44,7 @@ const eventListeners = function () {
 module.exports = {
   onPageLoad,
   onProfileLoad,
-  eventListeners
+  eventListeners,
+  onSignInLoad
 
 }
