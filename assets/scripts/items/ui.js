@@ -16,7 +16,7 @@ const onIndexItemsSuccess = function (data) {
 }
 
 const onIndexItemsFailure = function () {
-  console.log('You failed...no items')
+  $('#errorMessageProfile').text('Unable to display Bucket-Items')
 }
 
 const onShowItemSuccess = function (data) {
@@ -36,11 +36,11 @@ const onUpdateItemFailure = function () {
 }
 
 const onDeleteItemSuccess = function () {
-  console.log('Item deleted')
+  // console.log('Item deleted')
 }
 
 const onDeleteItemFailure = function () {
-  console.log('You failed...to delete item')
+  $('#errorMessageProfile').text('Unable to delete Bucket Item')
 }
 
 module.exports = {

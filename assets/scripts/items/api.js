@@ -24,16 +24,6 @@ const indexItems = function () {
   })
 }
 
-const showItem = function (data) {
-  return $.ajax({
-    url: config.apiOrigin + '/items/' + data.item.id,
-    method: 'GET',
-    headers: {
-      Authorization: 'Token token=' + store.user.token
-    }
-  })
-}
-
 const updateItem = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/items/' + data.item.id,
@@ -58,7 +48,6 @@ const deleteItem = function (id) {
 module.exports = {
   createItem,
   indexItems,
-  showItem,
   updateItem,
   deleteItem
 }

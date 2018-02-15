@@ -16,14 +16,6 @@ const onIndexItems = function () {
     .catch(ui.onIndexItemsFailure)
 }
 
-const onShowItemSubmit = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  api.showItem(data)
-    .then(ui.onShowItemSuccess)
-    .catch(ui.onShowItemFailure)
-}
-
 const onUpdateItemSubmit = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -43,7 +35,6 @@ const onDeleteItemClick = function () {
 const userEventListeners = function () {
   $('#content').on('submit', '#createItemForm', onCreateItemSubmit)
   $('#content').on('click', '#indexItems', onIndexItems)
-  $('#content').on('submit', '#showItemForm', onShowItemSubmit)
   $('#content').on('submit', '#updateItemForm', onUpdateItemSubmit)
   $('#content').on('click', '#deletItemButton', onDeleteItemClick)
 }
