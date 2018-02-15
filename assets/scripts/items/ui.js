@@ -1,8 +1,9 @@
 // const store = require('../store')
 const indexItemsTemplate = require('../templates/indexItems.handlebars')
+const createItemTemplate = require('../templates/createItem.handlebars')
 
 const onCreateItemSuccess = function (data) {
-  console.log('Created Item!', data)
+  $('#createItemContainer').html('')
 }
 
 const onCreateItemFailure = function () {
@@ -10,9 +11,14 @@ const onCreateItemFailure = function () {
 }
 
 const onIndexItemsSuccess = function (data) {
-  console.log(data.items, 'items')
-  const indexItemsHTML = indexItemsTemplate({'items': data.items})
-  $('#bucketListBucket').html(indexItemsHTML)
+  if (data.items.length < 1) {
+    $('#bucketListBucket').html('')
+    const createItemHTML = createItemTemplate()
+    $('#createItemContainer').html(createItemHTML)
+  } else {
+    const indexItemsHTML = indexItemsTemplate({'items': data.items})
+    $('#bucketListBucket').html(indexItemsHTML)
+  }
 }
 
 const onIndexItemsFailure = function () {

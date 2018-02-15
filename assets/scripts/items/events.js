@@ -8,6 +8,7 @@ const onCreateItemSubmit = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.createItem(data)
+    .then(onIndexItems)
     .then(ui.onCreateItemSuccess)
     .catch(ui.onCreateItemFailure)
 }
