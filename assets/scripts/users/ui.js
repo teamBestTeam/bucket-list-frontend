@@ -31,12 +31,12 @@ const onChangePassFailure = function () {
 }
 
 const onSignOutSuccess = function () {
-  console.log('YOU WERE SUCCESSFUL')
+  store.user = null
+  fillers.onPageLoad()
 }
 
-const onSignOutFailure = function (error) {
-  console.log(error)
-  console.log('you failed')
+const onSignOutFailure = function () {
+  $('#errorMessageProfile').text('Unable to sign out.')
 }
 
 module.exports = {

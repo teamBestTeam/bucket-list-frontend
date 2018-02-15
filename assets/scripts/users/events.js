@@ -2,6 +2,7 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const itemEvents = require('../items/events')
+// const store = require('../store')
 
 const onSignInSubmit = function (event) {
   event.preventDefault()
