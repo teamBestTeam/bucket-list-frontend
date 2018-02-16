@@ -3,7 +3,7 @@
 const config = {
   apiOrigins: {
     development: 'http://localhost:4741',
-    production: 'https://serene-eyrie-46099.herokuapp.com/'
+    production: 'https://serene-eyrie-46099.herokuapp.com'
   }
 }
 
