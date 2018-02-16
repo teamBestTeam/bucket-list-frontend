@@ -26,9 +26,7 @@ const onUpdateItemSubmit = function (event) {
   event.preventDefault()
   fillers.onClearState()
   const data = getFormFields(event.target)
-  console.log(data)
   api.updateItem(data)
-    .then(ui.onUpdateItemSuccess)
     .then(onIndexItems)
     .catch(ui.onUpdateItemFailure)
 }
@@ -37,7 +35,6 @@ const onDeleteItemClick = function () {
   fillers.onClearState()
   const dataId = $(this).parents('.card').data('id')
   api.deleteItem(dataId)
-    .then(ui.onDeleteItemSuccess)
     .then(onIndexItems)
     .catch(ui.onDeleteItemFailure)
 }
