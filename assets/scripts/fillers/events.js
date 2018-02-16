@@ -5,6 +5,12 @@ const profileTemplate = require('../templates/profile.handlebars')
 const changePassTemplate = require('../templates/changePass.handlebars')
 const createItemTemplate = require('../templates/createItem.handlebars')
 
+const onClearState = function () {
+  $('#errorMessageProfile').html('')
+  $('#changePassContainer').html('')
+  $('#createItemContainer').html('')
+}
+
 const onPageLoad = function () {
   const mainHTML = mainTemplate()
   $('#content').html(mainHTML)
@@ -20,8 +26,9 @@ const onSignInLoad = function () {
 }
 
 const onChangePassLoad = function () {
+  onClearState()
   const changePassHTML = changePassTemplate()
-  $('#content').html(changePassHTML)
+  $('#changePassContainer').html(changePassHTML)
 }
 
 const onProfileLoad = function () {
@@ -30,6 +37,7 @@ const onProfileLoad = function () {
 }
 
 const onCreateItemLoad = function () {
+  onClearState()
   const createItemHTML = createItemTemplate()
   $('#createItemContainer').html(createItemHTML)
 }
@@ -45,5 +53,6 @@ module.exports = {
   onPageLoad,
   onProfileLoad,
   eventListeners,
-  onSignInLoad
+  onSignInLoad,
+  onClearState
 }

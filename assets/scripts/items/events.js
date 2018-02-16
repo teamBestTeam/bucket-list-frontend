@@ -1,11 +1,13 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
+const fillers = require('../fillers/events.js')
 
 const updateItemTemplate = require('../templates/updateItem.handlebars')
 
 const onCreateItemSubmit = function (event) {
   event.preventDefault()
+  fillers.onClearState()
   const data = getFormFields(event.target)
   api.createItem(data)
     .then(onIndexItems)
@@ -14,6 +16,7 @@ const onCreateItemSubmit = function (event) {
 }
 
 const onIndexItems = function () {
+  fillers.onClearState()
   api.indexItems()
     .then(ui.onIndexItemsSuccess)
     .catch(ui.onIndexItemsFailure)
@@ -21,6 +24,7 @@ const onIndexItems = function () {
 
 const onUpdateItemSubmit = function (event) {
   event.preventDefault()
+  fillers.onClearState()
   const data = getFormFields(event.target)
   console.log(data)
   api.updateItem(data)
@@ -30,6 +34,7 @@ const onUpdateItemSubmit = function (event) {
 }
 
 const onDeleteItemClick = function () {
+  fillers.onClearState()
   const dataId = $(this).parents('.card').data('id')
   api.deleteItem(dataId)
     .then(ui.onDeleteItemSuccess)
@@ -38,6 +43,7 @@ const onDeleteItemClick = function () {
 }
 
 const onUpdateItemClick = function () {
+  fillers.onClearState()
   const dataId = $(this).parents('.card').data('id')
   const parent = $(this).parents('.card')
   const title = parent.find('.card-title').text()

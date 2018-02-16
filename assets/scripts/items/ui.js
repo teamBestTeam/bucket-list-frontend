@@ -1,6 +1,7 @@
 // const store = require('../store')
 const indexItemsTemplate = require('../templates/indexItems.handlebars')
 const createItemTemplate = require('../templates/createItem.handlebars')
+const fillers = require('../fillers/events.js')
 
 const onCreateItemSuccess = function (data) {
   $('#createItemContainer').html('')
