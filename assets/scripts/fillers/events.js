@@ -34,6 +34,10 @@ const onCreateItemLoad = function () {
   $('#createItemContainer').html(createItemHTML)
 }
 
+const onClearState = function () {
+  $('errorMessageProfile').html('')
+}
+
 const eventListeners = function () {
   $('#content').on('click', '#signIn', onSignInLoad)
   $('#content').on('click', '#signUp', onSignUpLoad)
@@ -45,5 +49,6 @@ module.exports = {
   onPageLoad,
   onProfileLoad,
   eventListeners,
-  onSignInLoad
+  onSignInLoad,
+  onClearState
 }
