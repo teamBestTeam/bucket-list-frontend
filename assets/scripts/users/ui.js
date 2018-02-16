@@ -23,7 +23,8 @@ const passwordMissMatch = function () {
 }
 
 const onChangePassSuccess = function () {
-  $('#changePassContainer').html('Success!')
+  $('#changePassContainer').html('')
+  $('#errorMessageProfile').text('Success!')
 }
 
 const onChangePassFailure = function () {
