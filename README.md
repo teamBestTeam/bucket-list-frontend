@@ -1,10 +1,16 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+# Bucket List
 
-# browser-template
+Bucket List is an app that allows users to log all the things they've been wanting to do but haven't gotten around to doing. Once a user creates an account- by signing up with a username and password- the user can sign in and view all of the items in their bucket list. The items are displayed with a title and a description, created by the user. By clicking on the update or delete buttons under each item, the user is able to execute both of those functions. The user can also change their password and sign out. Only the user can view and edit their own items in the bucket list.
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+ Beyond the functions of creating, viewing and editing items, the overall goal of our app is to inspire users to accomplish the items on their bucket list. It is TeamBestTeam's hope that the users will feel accountable for their goals, and excited about accomplishing them when taking action to write them down and view them on a clear app display.
+
+ Bucketlist app has a mongo database, an Express API framework backend and a javascript/HTML/CSS frontend. On the backend, a one-to-many relationship exists between a user and items - one user has many items. The RESTful routes, for handling GET, POST, PATCH and delete are used to communicate with the front end and execute user actions such as signing in/up, changing password, adding, deleting, updating and showing items.
+
+## Related Links
+- [Backend API Repo](http://github.com/teamBestTeam/bucket-list-backend)
+- [Deployed API](https://serene-eyrie-46099.herokuapp.com/)
+- [Deployed Client](http://teamBestTeam.github.io/bucket-list-frontend)
+- [Frontend Client Repo](http://github.com/teamBestTeam/bucket-list-frontend)
 
 ## Installation
 
@@ -19,43 +25,79 @@ front-end frameworks included.
   -   Your commit title should read `Initial commit`
 1.  Install dependencies with `npm install`.
 
-## Structure
+##  Technologies
+-  JavaScript
+-  jQuery
+-  Ajax
+-  Handlebars
+-  Bootstrap
+-  HTML5
+-  CSS
+-  Sass
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
+## User Stories
+- As a user, I want to be able to sign in.
+- As a user, I want a notification of the success or failure of that sign in.
+- As a user, I want to be able to sign up.
+- As a user, I want a notification of the success or failure of that singing up.
+- As a user, I want to be able to create list items upon signing in.
+- As a user, I want to be able to edit any list item I have created.
+- As a user, I want to be able to delete any item that I have created.
+- As a user, I want to be able to show one item.
+- As a user, I want to be able to show all items.
+- As a user, I want to be able to sign out.
+- As a user, I want notification of the success of signing out.
+- As a user, I want the flow between features to be clear.
+- AS a user, I want to be able to CRUD my own items.
+- As a user, I don't want another user to be able to CRUD my items.
+- As a user, I want to be able to change my password.
+- As a user, I want to be notified of the success of changing my password.
 
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
+##  Wire-frame
+[Version1.0](https://projects.invisionapp.com/freehand/document/kEpt2BiMI)
 
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
 
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
+## Unsolved Problems
+One piece of core list functionality that our team would like to further implement is the ability for a user to check off what they've done. Though there is something inspiring about viewing your hopes and dreams, it's underwhelming if you can't show that you've accomplished them.
 
-To deploy a browser-template based SPA, run `grunt deploy`.
+Beyond that, our team would like to connect our lists and items with a third party API for the challenge involved. There are a few different directions that we could go. To make the application feel more 'official', we could connect to a mail-based API to send login credentials about signing up or changing a password. Or we could enhance user experience by allowing users to tweet their goals, or perhaps use seeded images, or even make our application specific to Pokemon Go and involve requests to that API to record successfully catching 'em all.
 
-## Tasks
+## Planning and Strategy
+Our goals for this project were to meet the Minimal Viable Product (illustrated in the wire frames and entity relationship diagrams) while demonstrating clear, cohesive commits and working together as collaboratively and kindly as possible.
 
-Developers should run these often!
+To do this, we created a culture code that was observed throughout the five day project.
 
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+```
+1. Recognize and leverage each other's strengths to create a better product
+2. Communicate directly
+3. Communicate about availability through slack
+4. Be respectful.
+5. Don't take things personally.
+6. If you're in a bad mood: try to minimize damage by separating yourself, and asking for help if you need it.
+7. Each morning, a standup where next steps for the day are discussed, and then roles are taken up by members.
+8. Each evening, a retro where we discuss the original plan, where we stand now, and next steps for the next day.
+9. No merge without group consensus and review.
+10. Before we move to the next step or feature, review for possible issues, report them to the issue queue, and move forward.
+11.  No changes to database structure without group consensus.
+12. After we reach our Minimal Viable Product: only User Experience changes.
+```
 
-## [License](LICENSE)
+In particular, we adhered closely to a daily practice of stand-up (addressing what we've accomplished, what we're working on, and what might be blocking us) and retro (what we've done and what we will aim to do the next day). No pull or merge request was made without unanimous consent by the group; and as we tri-programmed together for almost the entire duration of the project, almost every commit was approved by the whole group prior to a pull request.
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+
+## Gratitudes
+1. Shaun White advised on the best way to display cards through a handle bars template, and his own personal stylings inspired our own.
+2. --curlPower was, collectively, a lovely rival team.
+3. Many thanks to Adam for repeatedly reserving rooms for us -- even re-reserving if we forgot to accept the reservation, in our caffeine deprived states.
+4. Even greater thanks to the GA staff who were forgiving of our squatting or talking animatedly in their communal spaces.
+
+## Catchphrases
+
+```
+"Git init, GITTING IT, GITTING IT!"
+```
+
+```
+*whispers*
+"sssserene eyrieeeee"
+```
