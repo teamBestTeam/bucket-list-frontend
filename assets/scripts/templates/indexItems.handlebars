@@ -6,15 +6,13 @@
         <h3 class="card-description">{{item.description}}</h3>
           <button class="btn btn-warning" id="updateItemButton">Edit</button>
           <button class="btn btn-danger" id="deletItemButton">Delete</button>
-          <a class="twitter-share-button"
-  href="https://twitter.com/share"
-  data-size="large"
-  data-text="Title"
-  data-url="https://oursite"
-  data-hashtags="buckets,lists,bucketlist"
-  data-related="bucketlist,buckets">
-Tweet
-</a>
+          <iframe
+            src="https://platform.twitter.com/widgets/tweet_button.html?size=l&url=https://teambestteam.github.io/bucket-list-frontend&text=I just checked off {{item.title}} from my bucketlist!&hashtags=buckets,lists,bucketlist,listbuckets"
+            width="140"
+            height="37"
+            title="Twitter Tweet Button"
+            class="tweet-class">
+          </iframe>
       </div>
     </div>
   {{/each}}
