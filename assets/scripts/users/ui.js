@@ -13,10 +13,6 @@ const onSignInFailure = function () {
   $('#signInForm').find('input')[0].focus()
 }
 
-const onSignUpSuccess = function () {
-  fillers.onSignInLoad()
-}
-
 const onSignUpFailure = function () {
   $('#errorMessageSignUp').text('Sign up failed. It\'s not you, it\'s us.')
   $('#signUpForm')[0].reset()
@@ -51,7 +47,6 @@ module.exports = {
   onSignInSuccess,
   onSignInFailure,
   onSignUpFailure,
-  onSignUpSuccess,
   onChangePassSuccess,
   onChangePassFailure,
   onSignOutFailure,
