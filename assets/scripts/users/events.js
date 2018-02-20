@@ -23,7 +23,9 @@ const onSignUpSubmit = function (event) {
     return ui.passwordMissMatch()
   }
   api.signUpUser(data)
-    .then(ui.onSignUpSuccess)
+    .then(() => api.signInUser(data))
+    .then(ui.onSignInSuccess)
+    .then(itemEvents.onIndexItems)
     .catch(ui.onSignUpFailure)
 }
 
