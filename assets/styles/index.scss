@@ -1,6 +1,13 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+.tweet-class {
+  border: 0;
+  overflow: hidden;
+  position: relative;
+  top: 16px;
+}
+
 #cardsDisplay {
   display: flex;
   flex-flow: row wrap;
@@ -15,10 +22,181 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
   padding: 12px 60px;
   height: fit-content;
 }
+// #signIn {
+//    border-top: 1px solid #96d1f8;
+//    background: #00008B;
+//    padding: 15px 30px;
+//     -webkit-border-radius: 8px;
+//    -moz-border-radius: 8px;
+//     border-radius: 8px;
+//    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+//    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+//    box-shadow: rgba(0,0,0,1) 0 1px 0;
+//    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+//    color: #F0F8FF;
+//    font-size: 20px;
+//    font-family: "Antic";
+//    text-decoration: none;
+//    // vertical-align: middle;
+//    align: center;
+//    }
 
-.tweet-class {
-  border: 0;
-  overflow: hidden;
-  position: relative;
-  top: 16px;
+   #signInForm {
+     margin : 0.5em auto 0.55em;
+     padding : 0.5em 0 0.55em;
+     font-size : 1.5em;
+     font-family: "Antic";
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 300;
+     line-height: 27px;
+     display : block;
+     text-align : center;
+     text-emphasis-color: #00008B;
+     color: #00008B
+   }
+
+   #signUpForm {
+     margin : 0.5em auto 0.55em;
+     padding : 0.5em 0 0.55em;
+     font-size : 1.5em;
+     font-family: "Antic";
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 300;
+     line-height: 27px;
+     display : block;
+     text-align : center;
+     text-emphasis-color: #00008B;
+     color: #00008B
+   }
+   #createItemForm {
+     margin : 0.5em auto 0.55em;
+     padding : 0.5em 0 0.55em;
+     font-size : 1.5em;
+     font-family: "Antic";
+     font-style: normal;
+     font-variant: normal;
+     font-weight: 300;
+     line-height: 27px;
+     display : block;
+     text-align : center;
+     text-emphasis-color: #00008B;
+     color: #00008B
+   }
+#changePassForm {
+  margin : 0.5em auto 0.55em;
+  padding : 0.5em 0 0.55em;
+  font-size : 1.5em;
+  font-family: "Antic";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 300;
+  line-height: 27px;
+  display : block;
+  text-align : center;
+  text-emphasis-color: #00008B;
+  color: #00008B
 }
+
+  button {
+    border-top: 1px solid #96d1f8;
+    background: #00008B;
+    padding: 15px 30px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #A52A2A;
+    font-size: 20px;
+    font-family: "Antic";
+    // text-decoration: none;
+    // vertical-align: middle;
+    display: block;
+    text-align: center;
+    align: center
+    }
+
+h1 {
+  font-family: "Lobster";
+  	font-size: 50px;
+  	font-style: normal;
+  	font-variant: normal;
+  	font-weight: 500;
+  	line-height: 26.4px;
+    display : block;
+    text-align : center;
+    color: #A52A2A
+  }
+h2 {
+  font-family: "Lobster";
+  	font-size: 27px;
+  	font-style: normal;
+  	font-variant: normal;
+  	font-weight: 300;
+  	line-height: 26.4px;
+    display : block;
+    text-align : center;
+    color: #A52A2A
+}
+body {
+  background: url("https://drive.google.com/uc?export=view&id=1TWan-YwCIPB5S0dthx0h1DmGLd4dyW6S")
+   // background-color: #FF4040
+}
+
+
+#description {
+      margin : 0.5em auto 0.55em;
+      padding : 0.5em 0 0.55em;
+      font-size : 1.5em;
+      font-family: "Antic";
+    	font-style: normal;
+    	font-variant: normal;
+    	font-weight: 300;
+    	line-height: 27px;
+      display : block;
+      text-align : center;
+      color: #00008B
+    }
+    #testimonial1 {
+      margin : 0.5em auto 0.55em;
+      padding : 0.5em 0 0.55em;
+      font-size : 1em;
+      font-family: "Antic";
+    	font-style: normal;
+    	font-variant: normal;
+    	font-weight: 500;
+    	line-height: 27px;
+      display : block;
+      text-align : center;
+      color: #00008B
+    }
+    #testimonial2 {
+      margin : 0.5em auto 0.55em;
+      padding : 0.5em 0 0.55em;
+      font-size : 1em;
+      font-family: "Antic";
+    	font-style: normal;
+    	font-variant: normal;
+    	font-weight: 500;
+    	line-height: 27px;
+      display : block;
+      text-align : center;
+      color: #00008B
+    }
+    #testimonial3 {
+      margin : 0.5em auto 0.55em;
+      padding : 0.5em 0 0.55em;
+      font-size : 1em;
+      font-family: "Antic";
+    	font-style: normal;
+    	font-variant: normal;
+    	font-weight: 500;
+    	line-height: 27px;
+      display : block;
+      text-align : center;
+      color: #00008B
+    }
